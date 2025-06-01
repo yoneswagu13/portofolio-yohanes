@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio YOHANES SETIAWAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fcf8;
+            color: #000000; /* Warna default yang cerah, sesuaikan jika ingin lebih gelap */
+        }
+        /* Styling untuk scrollbar kustom */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #64748b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        
+        /* CSS Tambahan untuk Menyembunyikan Bagian Konten Awalnya */
+        .content-section {
+            display: none; /* Semua bagian konten disembunyikan secara default */
+        }
+        /* Bagian 'home' akan ditampilkan sebagai default */
+        #home {
+            display: flex; /* Karena home section punya flexbox */
+        }
+
+        /* Gaya untuk tautan navigasi aktif */
+        .nav-link.active {
+            @apply bg-indigo-100 text-indigo-700; /* Warna yang berbeda untuk menandai aktif */
+        }
+
+        /* Transisi sederhana untuk tampilan/sembunyi konten */
+        .content-section.fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-2xl font-bold text-indigo-600">Portofolio Saya</a>
+            
+            <button id="hamburger-menu" class="lg:hidden text-slate-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <nav id="main-nav" class="hidden lg:flex space-x-6">
+                <a href="#home" class="nav-link active text-slate-700 hover:text-indigo-600 transition duration-300 font-medium p-2 rounded-md hover:bg-indigo-50" data-target="home">Beranda</a>
+                <a href="#about" class="nav-link text-slate-700 hover:text-indigo-600 transition duration-300 font-medium p-2 rounded-md hover:bg-indigo-50" data-target="about">Tentang Saya</a>
+                <a href="#skills" class="nav-link text-slate-700 hover:text-indigo-600 transition duration-300 font-medium p-2 rounded-md hover:bg-indigo-50" data-target="skills">Keahlian</a>
+                <a href="#projects" class="nav-link text-slate-700 hover:text-indigo-600 transition duration-300 font-medium p-2 rounded-md hover:bg-indigo-50" data-target="projects">Proyek</a>
+                <a href="#contact" class="nav-link text-slate-700 hover:text-indigo-600 transition duration-300 font-medium p-2 rounded-md hover:bg-indigo-50" data-target="contact">Kontak</a>
+            </nav>
+        </div>
+        
+        <nav id="mobile-nav" class="lg:hidden hidden bg-white shadow-lg mt-2 mx-4 rounded-lg">
+            <a href="#home" class="nav-link-mobile block py-3 px-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300 rounded-t-lg" data-target="home">Beranda</a>
+            <a href="#about" class="nav-link-mobile block py-3 px-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300" data-target="about">Tentang Saya</a>
+            <a href="#skills" class="nav-link-mobile block py-3 px-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300" data-target="skills">Keahlian</a>
+            <a href="#projects" class="nav-link-mobile block py-3 px-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300" data-target="projects">Proyek</a>
+            <a href="#contact" class="nav-link-mobile block py-3 px-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300 rounded-b-lg" data-target="contact">Kontak</a>
+        </nav>
+    </header>
+
+    <main class="min-h-screen">
+        <section id="home" class="content-section relative bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 md:py-32 flex items-center justify-center min-h-screen rounded-b-xl shadow-lg">
+            <div class="container mx-auto text-center px-4">
+                <div class="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <a href="my-photo.png.jpeg" target="_blank" title="Lihat Foto Profil YOHANES SETIAWAN">
+                        <img src="my-photo.png.jpeg" alt="Foto Profil YOHANES SETIAWAN" class="absolute inset-0 w-full h-full object-cover">
+                    </a>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Halo, Saya <span class="text-yellow-300">Yohanes Setiawan</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Seorang <span class="font-semibold">Pengembang Web Frontend</span> yang bersemangat dalam membangun pengalaman digital yang indah dan fungsional.</p>
+                <button class="inline-block bg-white text-indigo-700 hover:bg-indigo-100 px-8 py-3 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition duration-300 nav-link" data-target="projects">Lihat Proyek Saya</button>
+            </div>
+        </section>
+
+        <section id="about" class="content-section py-16 md:py-24 bg-white rounded-lg shadow-md mx-4 lg:mx-auto max-w-6xl mt-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center text-slate-800 mb-12">Tentang Saya</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <a href="my-photo.png.jpeg" target="_blank" title="Lihat Foto Detail">
+                            <img src="my-photo.png.jpeg" alt="Tampilan Sistem Penilaian Mahasiswa Sederhana" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-slate-700">
+                        <p class="mb-4">
+                            Saya adalah seorang mahasiswa <span class="font-semibold">  Universitas Merdeka Malang</span>  di bidang <span class="font-semibold"> Teknologi Informasi</span> dengan fokus pada pengembangan web. Saya memiliki ketertarikan yang kuat dalam menciptakan antarmuka pengguna yang intuitif dan responsif. Sepanjang perjalanan belajar saya, saya telah menguasai berbagai teknologi frontend dan selalu bersemangat untuk mempelajari hal-hal baru.
+                        </p>
+                        <p class="mb-4">
+                            Saya percaya bahwa desain yang baik dan kode yang bersih adalah kunci untuk membangun produk digital yang luar biasa. Saya selalu berusaha untuk menulis kode yang efisien, mudah dipelihara, dan sesuai dengan standar industri.
+                        </p>
+                        <p>
+                            Di luar coding, [Saya memiliki hobi bermain sepak bola dan juga suka bermain game strategi. Saya sering bermain futsal dengan teman-teman dan juga bermain game seperti [Mobile Legend]. Saya percaya bahwa bermain olahraga dan game membantu saya mengembangkan kemampuan kerja sama, pemikiran strategis, dan kemampuan mengatasi tekanan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section py-16 md:py-24 bg-slate-100 rounded-lg shadow-md mx-4 lg:mx-auto max-w-6xl mt-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center text-slate-800 mb-12">Keahlian Saya</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">HTML5</h3>
+                        <p class="text-slate-600 text-sm">Struktur Konten Web</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">CSS3</h3>
+                        <p class="text-slate-600 text-sm">Styling & Layout Responsif</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-js text-6xl text-yellow-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">JavaScript</h3>
+                        <p class="text-slate-600 text-sm">Interaktivitas Frontend</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-react text-6xl text-cyan-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">React.js</h3>
+                        <p class="text-slate-600 text-sm">Pengembangan UI Komponen</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-node-js text-6xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Node.js</h3>
+                        <p class="text-slate-600 text-sm">Konsep Dasar Backend</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fab fa-git-alt text-6xl text-red-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Git & GitHub</h3>
+                        <p class="text-slate-600 text-sm">Kontrol Versi & Kolaborasi</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fas fa-palette text-6xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">UI/UX Design</h3>
+                        <p class="text-slate-600 text-sm">Rancangan Antarmuka Pengguna</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                        <i class="fas fa-lightbulb text-6xl text-gray-700 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Problem Solving</h3>
+                        <p class="text-slate-600 text-sm">Analisis & Solusi Masalah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section py-16 md:py-24 bg-white rounded-lg shadow-md mx-4 lg:mx-auto max-w-6xl mt-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center text-slate-800 mb-12">Proyek Pilihan</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-slate-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transform hover:scale-105 transition duration-300">
+                        <a href="1.png.png" target="_blank" title="Lihat Tampilan Proyek Sistem Penilaian">
+                            <img src="1.png.png" alt="Tampilan Sistem Penilaian Mahasiswa Sederhana" class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-slate-800 mb-2">Sistem Penilaian Mahasiswa Sederhana</h3>
+                            <p class="text-slate-700 mb-4">Mengembangkan aplikasi web dasar untuk mengelola nilai mahasiswa, mencakup fungsi input data, perhitungan nilai, dan tampilan hasil nilai akhir.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-orange-200 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                                <span class="bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="https://forms.gle/WE6TGDmgpoLk8JMD7" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    Lihat Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                                </a>
+                                <a href="https://github.com/yoneswagu13" target="_blank" class="text-slate-600 hover:text-slate-800 font-medium flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transform hover:scale-105 transition duration-300">
+                        <a href="2.png.png" target="_blank" title="Lihat Tampilan Proyek Portofolio">
+                            <img src="2.png.png" alt="Tampilan Website Portofolio Interaktif" class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-slate-800 mb-2">Website Portofolio Interaktif (CV Digital)</h3>
+                            <p class="text-slate-700 mb-4">Membangun CV digital personal yang responsif dan interaktif, menampilkan profil, daftar proyek, keahlian, dan informasi kontak dengan desain modern dan bersih.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-cyan-200 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML5</span>
+                                <span class="bg-purple-200 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    Lihat Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                                </a>
+                                <a href="https://github.com/yoneswagu13" target="_blank" class="text-slate-600 hover:text-slate-800 font-medium flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transform hover:scale-105 transition duration-300">
+                        <a href="3.png.png" target="_blank" title="Lihat Tampilan Proyek Dashboard">
+                            <img src="3.png.png" alt="Tampilan Dashboard Manajemen Data Sederhana" class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-slate-800 mb-2">Dashboard Manajemen Data Sederhana</h3>
+                            <p class="text-slate-700 mb-4">Membuat antarmuka dashboard untuk visualisasi dan pengelolaan data sederhana, dilengkapi dengan fitur filter, pencarian, dan tampilan tabel data.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-lime-200 text-lime-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">React.js</span>
+                                <span class="bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Chakra UI</span>
+                                <span class="bg-red-200 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">API REST</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="c:\Users\pc\Documents\YONES\dashbor\demo-dashboard.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    Lihat Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                                </a>
+                                <a href="https://github.com/yoneswagu13" target="_blank" class="text-slate-600 hover:text-slate-800 font-medium flex items-center">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section py-16 md:py-24 bg-slate-100 rounded-lg shadow-md mx-4 lg:mx-auto max-w-6xl mt-8 mb-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center text-slate-800 mb-12">Hubungi Saya</h2>
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <p class="text-center text-slate-700 mb-6">Jangan ragu untuk menghubungi saya melalui formulir di bawah ini atau melalui media sosial.</p>
+                    <form id="contact-form" action="https://formspree.io/f/xjkwqyon" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-slate-700 text-sm font-semibold mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-slate-700 text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="_replyto" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200" placeholder="Masukkan email Anda" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-slate-700 text-sm font-semibold mb-2">Pesan</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300 transform hover:scale-105">Kirim Pesan</button>
+                    </form>
+                    <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">Temukan Saya di:</h3>
+                        <div class="flex justify-center space-x-6">
+                           <a href="https://www.instagram.com/yones_waguu?igsh=NWEwdTFqeW9tcmgz&utm_source=qr" target="_blank" class="text-slate-600 hover:text-indigo-600 transition duration-300 text-3xl">
+                           <i class="fab fa-instagram"></i>
+                           </a>
+                            </a>
+                            <a href="https://github.com/yoneswagu13" target="_blank" class="text-slate-600 hover:text-indigo-600 transition duration-300 text-3xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:yoneswagu13@gmail.com" class="text-slate-600 hover:text-indigo-600 transition duration-300 text-3xl">
+                              <i class="fas fa-envelope"></i>
+                            </a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-6 text-center rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4">
+            <p>&copy; YOHANES SETIAWAN</p>
+            <p class="text-sm mt-2"><i class=></i> </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mengambil semua elemen bagian konten
+        const contentSections = document.querySelectorAll('.content-section');
+        // Mengambil semua tautan navigasi desktop dan mobile
+        const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        // Tombol hamburger dan navigasi mobile
+        const hamburgerButton = document.getElementById('hamburger-menu');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        // Fungsi untuk menampilkan bagian konten tertentu dan menyembunyikan yang lain
+        function showSection(targetId) {
+            contentSections.forEach(section => {
+                // Sembunyikan semua section
+                section.style.display = 'none'; 
+                // Hapus kelas animasi fade-in
+                section.classList.remove('fade-in'); 
+            });
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                // Jika target section adalah 'home', gunakan display flex (sesuai CSS aslinya)
+                if (targetId === 'home') {
+                    targetSection.style.display = 'flex';
+                } else {
+                    // Untuk section lain, gunakan display block (agar konten biasa tampil)
+                    targetSection.style.display = 'block'; 
+                }
+                // Tambahkan kelas animasi fade-in
+                targetSection.classList.add('fade-in'); 
+            }
+        }
+
+        // Fungsi untuk mengatur kelas 'active' pada tautan navigasi
+        function setActiveLink(targetId) {
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Hapus kelas 'active' dari semua tautan
+            });
+            // Cari tautan yang sesuai dengan targetId dan tambahkan kelas 'active'
+            const activeDesktopLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+            if (activeDesktopLink) {
+                activeDesktopLink.classList.add('active');
+            }
+            const activeMobileLink = document.querySelector(`.nav-link-mobile[data-target="${targetId}"]`);
+            if (activeMobileLink) {
+                // Untuk mobile, tambahkan kelas active juga (jika diinginkan tampilannya)
+                activeMobileLink.classList.add('active');
+            }
+        }
+
+        // Event listener untuk setiap tautan navigasi
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah perilaku default tautan
+                const targetId = this.dataset.target; // Ambil ID target dari data-target atribut
+                showSection(targetId); // Tampilkan bagian konten yang sesuai
+                setActiveLink(targetId); // Atur tautan aktif
+
+                // Tutup menu mobile jika sedang terbuka (hanya untuk mobile view)
+                if (mobileNav.classList.contains('flex')) {
+                    mobileNav.classList.add('hidden');
+                    mobileNav.classList.remove('flex');
+                }
+            });
+        });
+
+        // Event listener untuk tombol hamburger
+        hamburgerButton.addEventListener('click', function() {
+            mobileNav.classList.toggle('hidden'); // Mengganti kelas hidden
+            mobileNav.classList.toggle('flex');   // Mengganti kelas flex (untuk menampilkan/menyembunyikan)
+        });
+
+        // Inisialisasi: Tampilkan bagian 'home' saat halaman dimuat pertama kali
+        // showSection('home'); // Sebenarnya sudah diset di CSS, tapi untuk jaga-jaga jika ada konflik
+
+        // Handle URL Hash pada saat memuat halaman
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialHash = window.location.hash.substring(1); // Ambil hash tanpa '#'
+            if (initialHash && document.getElementById(initialHash)) {
+                showSection(initialHash);
+                setActiveLink(initialHash);
+            } else {
+                showSection('home');
+                setActiveLink('home');
+            }
+        });
+
+
+        // JavaScript untuk Formspree
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Mencegah pengiriman formulir default
+
+            const formData = new FormData(this); // Mengambil data formulir
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Penting untuk menerima respons JSON dari Formspree
+                    }
+                });
+
+                if (response.ok) { // Jika pengiriman berhasil (HTTP status 2xx)
+                    formMessage.classList.remove('hidden', 'text-red-600');
+                    formMessage.classList.add('text-green-600');
+                    formMessage.innerHTML = 'Pesan Anda telah terkirim! Terima kasih.';
+                    contactForm.reset(); // Mengosongkan formulir
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                    }, 5000); // Pesan akan hilang setelah 5 detik
+                } else { // Jika ada masalah saat pengiriman
+                    const data = await response.json();
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        // Formspree akan mengembalikan error jika ada masalah, misalnya validasi
+                        formMessage.classList.remove('hidden', 'text-green-600');
+                        formMessage.classList.add('text-red-600');
+                        formMessage.innerHTML = data.errors.map(error => error.message).join(', ');
+                    } else {
+                        formMessage.classList.remove('hidden', 'text-green-600');
+                        formMessage.classList.add('text-red-600');
+                        formMessage.innerHTML = 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.';
+                    }
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                    }, 5000);
+                }
+            } catch (error) {
+                console.error('Error saat mengirim formulir:', error);
+                formMessage.classList.remove('hidden', 'text-green-600');
+                formMessage.classList.add('text-red-600');
+                formMessage.innerHTML = 'Terjadi masalah jaringan. Silakan coba lagi nanti.';
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
