@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Dashboard Manajemen Data Sederhana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS kustom tambahan jika diperlukan */
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <header class="bg-blue-700 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Dashboard Admin Sederhana</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="c:\Users\pc\Documents\YONES\dashbor\index.html" class="hover:text-blue-200">Home</a></li>
+                <li><a href="c:\Users\pc\Documents\YONES\dashbor\data.html" class="hover:text-blue-200">Data</a></li>
+                <li><a href="c:\Users\pc\Documents\YONES\dashbor\pengaturan.html" class="hover:text-blue-200">Pengaturan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 mt-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="text-gray-600 text-sm">Total Pengguna</div>
+                    <i class="fas fa-users text-2xl text-blue-500"></i>
+                </div>
+                <div class="text-3xl font-bold text-gray-800 mt-2">1,234</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="text-gray-600 text-sm">Proyek Aktif</div>
+                    <i class="fas fa-project-diagram text-2xl text-green-500"></i>
+                </div>
+                <div class="text-3xl font-bold text-gray-800 mt-2">56</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="text-gray-600 text-sm">Pesan Baru</div>
+                    <i class="fas fa-envelope-open-text text-2xl text-yellow-500"></i>
+                </div>
+                <div class="text-3xl font-bold text-gray-800 mt-2">12</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="text-gray-600 text-sm">Pendapatan</div>
+                    <i class="fas fa-dollar-sign text-2xl text-red-500"></i>
+                </div>
+                <div class="text-3xl font-bold text-gray-800 mt-2">Rp 12.5 Jt</div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Daftar Pengguna</h3>
+            
+            <div class="mb-4 flex items-center space-x-2">
+                <input type="text" id="searchInput" placeholder="Cari pengguna..." class="border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 flex-grow">
+                <button id="searchButton" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">Cari</button>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg" id="userTable">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">ID</th>
+                            <th class="py-3 px-6 text-left">Nama</th>
+                            <th class="py-3 px-6 text-left">Email</th>
+                            <th class="py-3 px-6 text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 text-sm font-light">
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">101</td>
+                            <td class="py-3 px-6 text-left">Yohanes Setiawan</td>
+                            <td class="py-3 px-6 text-left">yoneswagu13@gmail.com</td>
+                            <td class="py-3 px-6 text-left"><span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Aktif</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">102</td>
+                            <td class="py-3 px-6 text-left">Nedi Wagu</td>
+                            <td class="py-3 px-6 text-left">nedi@gmail.com</td>
+                            <td class="py-3 px-6 text-left"><span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Tidak Aktif</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">103</td>
+                            <td class="py-3 px-6 text-left">Elkan Wagu</td>
+                            <td class="py-3 px-6 text-left">elkan@gmail.com</td>
+                            <td class="py-3 px-6 text-left"><span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Aktif</span></td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div class="mt-4 text-gray-600 text-sm">Menampilkan 1 hingga 3 dari 100 entri.</div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 Demo Dashboard. Dibuat dengan HTML, CSS, JavaScript.</p>
+    </footer>
+
+    <script>
+        // JavaScript sederhana untuk fitur pencarian (hanya contoh statis)
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const table = document.getElementById('userTable');
+            const rows = table.getElementsByTagName('tr');
+
+            // Mulai dari indeks 1 untuk melewati thead (header tabel)
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const cells = row.getElementsByTagName('td');
+                let found = false;
+                for (let j = 0; j < cells.length; j++) {
+                    const cellText = cells[j].textContent.toLowerCase();
+                    if (cellText.includes(searchTerm)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    row.style.display = ''; // Tampilkan baris
+                } else {
+                    row.style.display = 'none'; // Sembunyikan baris
+                }
+            }
+        });
+        
+        // Opsional: Reset pencarian saat input dikosongkan
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            if (this.value === '') {
+                document.getElementById('searchButton').click(); // Panggil fungsi search untuk mereset tampilan
+            }
+        });
+    </script>
+</body>
+</html>
